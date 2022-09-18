@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/future/image";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { Biography } from "./components/home/Biography";
 import { ContactLink } from "./components/home/ContactLink";
 
@@ -31,11 +31,20 @@ export interface IFormInputs {
   other: string[];
 }
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
   const {
     handleSubmit,
     formState: { errors },
     register,
+    defaultValues :
+    {
+      linkedin :"",
+      instagram :"",
+      twitter :"",
+      facebook :"",
+      bio :"",
+      [other]: []
+    }
   } = useForm<IFormInputs>();
   const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data);
   const [edit, setEdit] = useState(false);
@@ -101,24 +110,35 @@ const Home: NextPage = () => {
                 Icon={FaLinkedin}
                 edit={edit}
                 href="https://www.linkedin.com/in/darcy-vitacca"
+                register={register}
+                name="linkedin"
               />
               <ContactLink
                 label="Instagram"
                 Icon={FaInstagram}
                 edit={edit}
                 href="https://www.facebook.com/danieldarcy123"
-              />
+                register={register}
+                name="instagram"
+                
+                />
               <ContactLink
                 label="Twitter"
                 Icon={FaTwitter}
                 edit={edit}
                 href="https://twitter.com/darcyio_"
+                register={register}
+                name="twitter"
+
               />
               <ContactLink
                 label="Facebook"
                 Icon={FaFacebook}
                 edit={edit}
                 href="https://www.facebook.com/danieldarcy123"
+                name="linkedin"
+                register={register}
+      
               />
               <Biography edit={edit} />
             </form>
