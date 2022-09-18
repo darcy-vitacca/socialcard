@@ -7,7 +7,8 @@
 [X] - Add loader
 [X] - Include more info in session
 [?] - Link to share only those who have the link can view or a way of gating it
-[] - Draw out inputs
+[X] - Draw out inputs
+[] - Add RHF types end to end
 [] - Store Linkedin
 [] - Store Facebook
 [] - Store Twitter

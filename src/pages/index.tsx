@@ -36,16 +36,15 @@ const Home: NextPage = (props) => {
     handleSubmit,
     formState: { errors },
     register,
-    defaultValues :
-    {
-      linkedin :"",
-      instagram :"",
-      twitter :"",
-      facebook :"",
-      bio :"",
-      [other]: []
-    }
-  } = useForm<IFormInputs>();
+  } = useForm<IFormInputs>({
+    defaultValues: {
+      linkedin: "",
+      instagram: "",
+      twitter: "",
+      facebook: "",
+      bio: "",
+    },
+  });
   const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data);
   const [edit, setEdit] = useState(false);
 
@@ -120,8 +119,7 @@ const Home: NextPage = (props) => {
                 href="https://www.facebook.com/danieldarcy123"
                 register={register}
                 name="instagram"
-                
-                />
+              />
               <ContactLink
                 label="Twitter"
                 Icon={FaTwitter}
@@ -129,7 +127,6 @@ const Home: NextPage = (props) => {
                 href="https://twitter.com/darcyio_"
                 register={register}
                 name="twitter"
-
               />
               <ContactLink
                 label="Facebook"
@@ -138,7 +135,6 @@ const Home: NextPage = (props) => {
                 href="https://www.facebook.com/danieldarcy123"
                 name="linkedin"
                 register={register}
-      
               />
               <Biography edit={edit} />
             </form>

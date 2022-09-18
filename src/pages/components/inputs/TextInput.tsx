@@ -5,7 +5,6 @@ interface ITextInput {
   label: string;
   name: string;
   placeholder?: string;
-  type: string;
   register: UseFormRegister<FieldValues>;
 }
 
@@ -14,7 +13,6 @@ export const TextInput: FC<ITextInput> = ({
   placeholder,
   name,
   register,
-  type,
 }) => {
   return (
     <div className="flex flex-row items-center w-full">
@@ -23,7 +21,6 @@ export const TextInput: FC<ITextInput> = ({
           <span className="label-text">{label}</span>
         </label>
         <input
-          type="text"
           placeholder={placeholder}
           className="input input-bordered"
           {...register(name)}
