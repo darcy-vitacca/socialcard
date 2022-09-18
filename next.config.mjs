@@ -15,7 +15,17 @@ function defineNextConfig(config) {
 export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
-  // Next.js i18n docs: https://nextjs.org/docs/advanced-features/i18n-routing
+  experimental: {
+    images: {
+      allowFutureImage: true,
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "media-exp1.licdn.com",
+        },
+      ],
+    },
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",

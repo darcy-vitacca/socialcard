@@ -5,11 +5,11 @@
 [X] - Show auth and unauth and show a profile picture
 [X] - Connect to vercel
 [X] - Add loader
-[] - Include more info in session
-[] - Link to share only those who have the link can view or a way of gating it
+[X] - Include more info in session
+[?] - Link to share only those who have the link can view or a way of gating it
 [] - Draw out inputs
 [] - Store Linkedin
 [] - Store Facebook
 [] - Store Twitter
-[] - Look into being able to follow programatically from the app without having to visit other social medias
+[] - Look into being able to follow programmatically from the app without having to visit other social medias
 [] - Show modal to auth into other social medias else hide this message from appearing again
